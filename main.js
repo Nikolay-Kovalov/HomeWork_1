@@ -9,7 +9,31 @@ function sum(number) {
   }
   return total
 }
-console.log(sum(100))
+
+
+// 2. Факториал числа:
+// Создать функцию которая будет считать факториал числа
+
+function getFactorial(number) {
+    if (number === 1) {
+       return number
+    } else {
+        return number * getFactorial(number-1)
+   }
+}
+
+
+
+function getFactorialLoop(number) {
+    let factorial = 1;
+    for (let i = 1; i <= number; i += 1){
+        factorial *= i
+    }
+    return factorial
+}
+
+
+
 
 // 3. Проверка на четность:
 // Функция которая должна проверять является ли число четным
@@ -31,7 +55,7 @@ function maxNumber(arr) {
   return Math.max(...arr)
 }
 
-console.log(maxNumber([2, 4, 7, 9, 34]))
+
 
 
 // 5. Обратная строка:
@@ -44,7 +68,7 @@ function toReverse(str) {
 return str.split('').reverse().join('')
 }
 
-console.log(toReverse(string))
+
 
 
 
@@ -60,6 +84,6 @@ function showResults(...args) {
     ul.appendChild(fragment)
 }
 
-showResults(sum(100),isEven(2),maxNumber([1,4,6]),toReverse('Hello'))
+showResults(sum(100),getFactorial(6),getFactorialLoop(5),isEven(2),maxNumber([1,4,6]),toReverse('Hello'))
 
 
